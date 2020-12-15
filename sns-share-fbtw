@@ -1,0 +1,4 @@
+<div class="snsshare">
+  <a id="share_fb" href="http://www.facebook.com/share.php?u=<?php the_permalink(); ?>"onclick="window.open(this.href, 'FBwindow', 'width=550, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;">Facebookでシェア</a>
+  <a id="share_tw" href="http://twitter.com/share?count=horizontal&original_referer=<?php the_permalink(); ?>&text=<?php the_title(); ?>&url=<?php the_permalink(); ?>"onclick="window.open(this.href, 'tweetwindow', 'width=550, height=450,personalbar=0,toolbar=0,scrollbars=1,resizable=1'); return false;">Twitterでシェア</a>
+</div>
