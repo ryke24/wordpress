@@ -1,0 +1,53 @@
+add_action( 'init', 'register_cpt_news' );
+
+function register_cpt_news() {
+
+    $labels = array( 
+        'name' => _x( 'News', 'News' ),
+        'singular_name' => _x( 'News', 'News' ),
+        'add_new' => _x( 'Add New', 'News' ),
+        'add_new_item' => _x( 'Add New News', 'News' ),
+        'edit_item' => _x( 'Edit News', 'News' ),
+        'new_item' => _x( 'New News', 'News' ),
+        'view_item' => _x( 'View News', 'News' ),
+        'search_items' => _x( 'Search News', 'News' ),
+        'not_found' => _x( 'No Newss found', 'News' ),
+        'not_found_in_trash' => _x( 'No Newss found in Trash', 'News' ),
+        'parent_item_colon' => _x( 'Parent News:', 'News' ),
+        'menu_name' => _x( 'ニュース', 'News' ),
+    );
+
+    $args = array( 
+        'labels' => $labels,
+        'hierarchical' => false,
+        
+        'supports' => array( 'title', 'editor', 'thumbnail' ),
+        
+        'public' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        
+        'show_in_nav_menus' => true,
+        'publicly_queryable' => true,
+        'exclude_from_search' => false,
+        'has_archive' => true,
+        'query_var' => true,
+        'can_export' => true,
+        'rewrite' => true,
+        'capability_type' => 'post'
+    );
+    register_post_type( 'news', $args );
+}
+/* カスタムタクソノミー */
+ register_taxonomy(
+   'news-category',  /* タクソノミーのslug */
+   'news',           /* 属する投稿タイプ */
+    array(
+      'hierarchical' => true,
+      'update_count_callback' => '_update_post_term_count',
+      'label' => 'カテゴリー',
+      'singular_label' => 'カテゴリー',
+      'public' => true,
+      'show_ui' => true
+    )
+  );
