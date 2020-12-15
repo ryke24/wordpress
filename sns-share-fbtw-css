@@ -1,0 +1,30 @@
+.snsshare {
+width: 100%;
+height: 50px;
+margin-bottom: 20px;
+}
+  
+.snsshare a {
+width: 50%;
+height: 30px;
+padding: 14px 0;
+float: left;
+font-size: 18px;
+font-weight: lighter;
+color: #ffffff;
+text-align: center;
+letter-spacing: 0.1em;
+display: inline-block;
+font-family: 'Avenir','Helvetica neue';
+}
+.snsshare a:hover {
+    color: #dd3333;
+}
+.snsshare a#share_fb {
+background-color: #3b5998;
+border-bottom-color: #314a7f;
+}
+.snsshare a#share_tw {
+background-color: #00acee;
+border-bottom-color: #007fb2;
+}
