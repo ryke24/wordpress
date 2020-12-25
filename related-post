@@ -28,3 +28,24 @@
   <br>
   </ul>
 </aside>
+
+/*Related Post CSS*/
+
+  .related-post ul {
+    margin: 0;
+  }
+  .related-post li {
+    display: block;
+    width: 100%;
+  }
+  .related-post li a:after {
+    display: block;
+    clear: both;
+    content: '';
+  }
+  .related-post img {
+    float: left;
+    margin-right: 10px;
+    width: 30%;
+    height: auto;
+  }
